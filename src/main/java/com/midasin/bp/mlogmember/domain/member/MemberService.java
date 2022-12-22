@@ -68,7 +68,7 @@ public class MemberService {
 
         final String savedPassword = member.getPassword();
 
-        if (!PasswordEncryptUtil.match(savedPassword, password)) {
+        if (!PasswordEncryptUtil.match(password, savedPassword)) {
             throw new CustomException(ErrorMessage.INVALID_PASSWORD);
         }
 

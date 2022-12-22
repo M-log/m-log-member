@@ -1,6 +1,7 @@
 package com.midasin.bp.mlogmember.utils;
 
-import com.midasin.mtsmember.infra.ErrorMessage;
+
+import com.midasin.bp.mlogmember.infra.ErrorMessage;
 import lombok.experimental.UtilityClass;
 import org.modelmapper.internal.util.Assert;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
