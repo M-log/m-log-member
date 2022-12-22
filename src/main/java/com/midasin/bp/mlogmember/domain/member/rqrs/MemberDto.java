@@ -1,5 +1,6 @@
 package com.midasin.bp.mlogmember.domain.member.rqrs;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.midasin.bp.mlogmember.domain.member.Member;
 import com.midasin.bp.mlogmember.utils.ModelMapperUtil;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -18,6 +19,7 @@ public class MemberDto {
 
     @NotNull
     @Schema(description = "비밀번호")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @NotNull
