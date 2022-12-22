@@ -5,13 +5,15 @@ import com.midasin.bp.mlogmember.domain.member.Member;
 import com.midasin.bp.mlogmember.utils.ModelMapperUtil;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
 
 @Getter
 @Schema(description = "회원 정보 DTO")
 public class MemberDto {
+
+    @Schema(description = "회원 ID")
+    private Long id;
 
     @NotNull
     @Schema(description = "이메일")
