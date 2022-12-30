@@ -1,5 +1,6 @@
 package com.midasin.bp.mlogmember.domain.member;
 
+import com.midasin.bp.mlogmember.domain.member.rqrs.AuthMemberDto;
 import com.midasin.bp.mlogmember.domain.member.rqrs.MemberDto;
 import com.midasin.bp.mlogmember.infra.BaseController;
 import io.swagger.v3.oas.annotations.Operation;
@@ -45,7 +46,7 @@ public class MemberController implements BaseController {
 
     @Operation(summary = "사용자 인증 정보 조회")
     @GetMapping(value = "/auth/{email}/{password}")
-    public MemberDto findAuthMember(@PathVariable String email, @PathVariable String password){
+    public AuthMemberDto findAuthMember(@PathVariable String email, @PathVariable String password){
         return memberService.findAuthMember(email, password);
     }
 

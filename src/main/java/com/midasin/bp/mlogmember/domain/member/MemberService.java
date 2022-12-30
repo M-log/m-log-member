@@ -1,6 +1,7 @@
 package com.midasin.bp.mlogmember.domain.member;
 
 
+import com.midasin.bp.mlogmember.domain.member.rqrs.AuthMemberDto;
 import com.midasin.bp.mlogmember.domain.member.rqrs.MemberDto;
 import com.midasin.bp.mlogmember.domain.role.Role;
 import com.midasin.bp.mlogmember.domain.role.enums.RoleType;
@@ -59,7 +60,7 @@ public class MemberService {
      * @param password
      * @return
      */
-    public MemberDto findAuthMember(String email, String password) {
+    public AuthMemberDto findAuthMember(String email, String password) {
         Assert.notNull(email, ErrorMessage.INVALID_PARAM.name());
         Assert.notNull(password, ErrorMessage.INVALID_PARAM.name());
 
@@ -72,6 +73,6 @@ public class MemberService {
             throw new CustomException(ErrorMessage.INVALID_PASSWORD);
         }
 
-        return MemberDto.from(member);
+        return AuthMemberDto.from(member);
     }
 }
