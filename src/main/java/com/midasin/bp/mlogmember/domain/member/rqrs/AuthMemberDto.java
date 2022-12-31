@@ -4,15 +4,12 @@ import com.midasin.bp.mlogmember.domain.member.Member;
 import com.midasin.bp.mlogmember.domain.role.Role;
 import com.midasin.bp.mlogmember.domain.role.enums.RoleType;
 import com.midasin.bp.mlogmember.infra.ErrorMessage;
-import com.midasin.bp.mlogmember.utils.ModelMapperUtil;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 import org.springframework.util.Assert;
 
-import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -37,6 +34,7 @@ public class AuthMemberDto {
 
     public static AuthMemberDto from(Member member) {
         Assert.notNull(member, ErrorMessage.INVALID_PARAM.name());
+
         return AuthMemberDto.builder()
                 .id(member.getId())
                 .email(member.getEmail())
